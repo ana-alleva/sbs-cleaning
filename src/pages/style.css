@@ -1,0 +1,8 @@
+.rectangle {
+    height: 0.3em;
+    width: 2em;
+}
+
+.homeBg {
+    background-image: url('../imgs/living-room.png');
+}
