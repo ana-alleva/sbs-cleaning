@@ -1,9 +1,11 @@
+import cn from "classnames";
 
-export const RugCard = (props) => {
+export const RugCard = ({ rug, bgImage, text, className }) => {
     return (
-      <div className={`flex items-center gap-4 w-[25%] ${ props.backgroundRug }`} >
-        <img src={props.rug} alt="rug" />
-        <p className="text-base font-bold">{props.text}</p>
+      <div className={cn("relative flex items-center", className)} >
+        <img src={bgImage} alt="" className="absolute w-full h-full z-0"/>
+        <img src={rug} alt="rug" className="z-10 ml-4" />
+        <p className="text-base font-bold ml-4 z-10">{text}</p>
       </div>
     );
   };

@@ -18,35 +18,37 @@ export const Footer = () => {
             interaction is complete, the customer tells someone else how GREAT
             it was!
           </p>
-          <div>
+          <div className="w-full">
             <LabelFooter text="Location" />
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-col md:flex-row gap-4">
               <CustomButton text="Open in google location" path="/services" />
-              <CustomButton
-                text={<PhoneIcon className="mr-2 phoneIcon" />}
-                path="/services"
-              />
-              <CustomButton
-                text={<EnvelopeIcon className="mr-2 phoneIcon" />}
-                path="/services"
-              />
+              <div className="flex gap-4">
+                <CustomButton
+                  text={<PhoneIcon className="m-auto phoneIcon" />}
+                  path="/services"
+                />
+                <CustomButton
+                  text={<EnvelopeIcon className="m-auto phoneIcon" />}
+                  path="/services"
+                />
+              </div>
             </div>
           </div>
         </div>
         <div className="p-4">
-          <div className="flex items-center my-2">
-            <div className="flex flex-col">
+          <div className="flex w-full items-center my-2">
+            <div className="flex w-full flex-col">
               <LabelFooter text="Hours" />
-              <div className="flex items-center gap-4">
+              <div className="flex-col md:flex-row w-full flex z-10 items-center gap-4">
                 <SelectFooter />
                 <CustomButton text="Contact Us" path="/services" />
               </div>
             </div>
           </div>
-          <div className="flex items-center my-2">
-            <div className="flex flex-col">
+          <div className="flex w-full items-center my-2">
+            <div className="flex w-full flex-col">
               <LabelFooter text="Services" />
-              <div className="flex items-center gap-4">
+              <div className="flex-col flex md:flex-row items-center gap-4">
                 <SelectFooter />
                 <CustomButton text="Book Now" path="/services" />
               </div>

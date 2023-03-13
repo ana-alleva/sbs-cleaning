@@ -3,19 +3,19 @@ import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
 const people = [
-  { name: 'Weekly from 8:00 to 17:00' },
-  { name: 'Saturday from 8:00 to 13:00' },
-  { name: 'Sunday: from 8:00 to 9:00' },
+  { name: '5' },
+  { name: '6' },
+  { name: '7' },
 ]
 
-export function SelectFooter() {
+export function SelectForm() {
   const [selected, setSelected] = useState(people[0])
 
   return (
-    <div className="w-full md:w-72">
+    <div className="w-full md:w-20">
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative mt-1">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-slate-800 py-4 mr-2 px-6 text-left shadow-md border border-slate-800 text-white text-sm focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-100 sm:text-sm">
+          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-slate-50 py-4 mr-2 px-6 text-left border border-slate-3000 text-slate-800 text-sm focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-100 sm:text-sm">
             <span className="block truncate">{selected.name}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <ChevronUpDownIcon
