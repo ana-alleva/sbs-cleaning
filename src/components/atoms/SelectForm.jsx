@@ -12,7 +12,7 @@ export function SelectForm() {
   const [selected, setSelected] = useState(people[0])
 
   return (
-    <div className="w-full md:w-20">
+    <div className="w-20">
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative mt-1">
           <Listbox.Button className="relative w-full cursor-default rounded-lg bg-slate-50 py-4 mr-2 px-6 text-left border border-slate-3000 text-slate-800 text-sm focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-100 sm:text-sm">

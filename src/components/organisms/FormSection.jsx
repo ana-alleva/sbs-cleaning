@@ -32,13 +32,15 @@ export const FormSection = () => {
             We've been carpet cleaning in Charlotte <br /> since since 2021. If
             your carpets need a cleaning give us a try.
           </p>
-            <div className="mt-8">
-                <FormRowInputs label="How many rooms?" />
-                <FormRowInputs label="Entry or Hall?" />
-                <FormRowInputs label="Staircase?" />
-            </div>
+          <div className="mt-8 w-full">
+            <FormRowInputs label="How many rooms?" />
+            <FormRowInputs label="Entry or Hall?" />
+            <FormRowInputs label="Staircase?" />
+          </div>
         </div>
-        <SummaryCard />
+        <div className="flex justify-center">
+          <SummaryCard />
+        </div>
       </div>
     </div>
   );
