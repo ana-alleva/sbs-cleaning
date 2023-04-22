@@ -1,29 +1,51 @@
-import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
 import { SubTitle } from "../atoms/SubTitle";
 import { FormRowInputs } from "../molecules/FormRowInputs";
+import ServiceOptionsMobile from "../molecules/ServiceOptionMobile";
+import ServiceOptionsDesktop from "../molecules/ServiceOptionsDesktop";
 import { SummaryCard } from "../molecules/SummaryCard";
 
+const serviceOptions = {
+  carpetCleaning: {
+    id: "CARPET_CLEANING",
+    label: "Carpet Cleaning",
+  },
+  commercialCarpetCleaning: {
+    id: "COMMERCIAL_CARPET_CLEANING",
+    label: "Commercial Carpet Cleaning",
+  },
+  furnitureCleaning: {
+    id: "FURNITURE_CLEANING",
+    label: "Furniture Cleaning",
+  },
+  areaRug: {
+    id: "AREA_RUG",
+    label: "Area Rug",
+  },
+};
+
 export const FormSection = () => {
+  const [selectedOption, setSelectedOption] = useState(
+    serviceOptions.carpetCleaning
+  );
+
   return (
     <div className="bg-slate-200 w-full py-11 px-10">
-      <div className="text-base flex justify-between font-bold">
-        <div className="flex gap-4">
-          <a className="selected text-indigo-500" href="/">
-            Carpet Cleaning
-          </a>
-          <a className="text-slate-400" href="/">
-            Commercial Carpet Cleaning
-          </a>
-          <a className="text-slate-400" href="/">
-            Furniture Cleaning
-          </a>
-          <a className="text-slate-400" href="/">
-            Area Rug
-          </a>
+      <div className="text-base flex justify-end md:justify-start font-bold">
+        <div className="hidden md:block">
+          <ServiceOptionsDesktop
+            serviceOptions={serviceOptions}
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+          />
         </div>
-        <a className="text-indigo-500" href="/">
-          <AdjustmentsHorizontalIcon className="h-5" />
-        </a>
+        <div className="block md:hidden">
+          <ServiceOptionsMobile
+            serviceOptions={serviceOptions}
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+          />
+        </div>
       </div>
       <div className="py-11 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
