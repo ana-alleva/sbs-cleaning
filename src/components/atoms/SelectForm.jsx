@@ -1,15 +1,11 @@
-import { Fragment, useState } from 'react'
-import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import { Fragment, useState } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
-const people = [
-  { name: '5' },
-  { name: '6' },
-  { name: '7' },
-]
+const people = [{ name: "5" }, { name: "6" }, { name: "7" }];
 
 export function SelectForm() {
-  const [selected, setSelected] = useState(people[0])
+  const [selected, setSelected] = useState(people[0]);
 
   return (
     <div className="w-20">
@@ -30,13 +26,13 @@ export function SelectForm() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            <Listbox.Options className="z-10 absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
               {people.map((person, personIdx) => (
                 <Listbox.Option
                   key={personIdx}
                   className={({ active }) =>
                     `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? 'bg-indigo-100 text-indigo-900' : 'text-gray-900'
+                      active ? "bg-indigo-100 text-indigo-900" : "text-gray-900"
                     }`
                   }
                   value={person}
@@ -45,7 +41,7 @@ export function SelectForm() {
                     <>
                       <span
                         className={`block truncate ${
-                          selected ? 'font-medium' : 'font-normal'
+                          selected ? "font-medium" : "font-normal"
                         }`}
                       >
                         {person.name}
@@ -64,5 +60,5 @@ export function SelectForm() {
         </div>
       </Listbox>
     </div>
-  )
+  );
 }

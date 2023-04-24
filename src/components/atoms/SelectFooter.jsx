@@ -1,15 +1,15 @@
-import { Fragment, useState } from 'react'
-import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import { Fragment, useState } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
 const people = [
-  { name: 'Weekly from 8:00 to 17:00' },
-  { name: 'Saturday from 8:00 to 13:00' },
-  { name: 'Sunday: from 8:00 to 9:00' },
-]
+  { name: "Weekly from 8:00 to 17:00" },
+  { name: "Saturday from 8:00 to 13:00" },
+  { name: "Sunday: from 8:00 to 9:00" },
+];
 
 export function SelectFooter() {
-  const [selected, setSelected] = useState(people[0])
+  const [selected, setSelected] = useState(people[0]);
 
   return (
     <div className="w-full md:w-72">
@@ -36,7 +36,7 @@ export function SelectFooter() {
                   key={personIdx}
                   className={({ active }) =>
                     `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? 'bg-indigo-100 text-indigo-900' : 'text-gray-900'
+                      active ? "bg-indigo-100 text-indigo-900" : "text-gray-900"
                     }`
                   }
                   value={person}
@@ -45,7 +45,7 @@ export function SelectFooter() {
                     <>
                       <span
                         className={`block truncate ${
-                          selected ? 'font-medium' : 'font-normal'
+                          selected ? "font-medium" : "font-normal"
                         }`}
                       >
                         {person.name}
@@ -64,5 +64,5 @@ export function SelectFooter() {
         </div>
       </Listbox>
     </div>
-  )
+  );
 }

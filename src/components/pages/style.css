@@ -6,3 +6,9 @@
 .homeBg {
     background-image: url('../../imgs/living-room.png');
 }
+
+.product-img {
+    background-image: url('../../imgs/product-01.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
